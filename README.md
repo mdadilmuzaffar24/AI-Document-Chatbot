@@ -40,7 +40,7 @@ This app is built using a **RAG (Retrieval-Augmented Generation)** pipeline. Her
 * **Exportable History:** You can download your entire chat conversation as a text file for offline review.
 * **Secure & Fast:** Built with Streamlit's secrets management and powered by Groq's ultra-low latency inference engine.
 
-* ## 💻 Tech Stack
+## 💻 Tech Stack
 * **Frontend:** Streamlit (Custom CSS/Dark Theme)
 * **Orchestration:** LangChain
 * **Embeddings:** HuggingFace / SentenceTransformers
