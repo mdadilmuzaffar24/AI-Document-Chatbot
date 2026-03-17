@@ -76,7 +76,8 @@ def process_document(file):
     elif file.name.endswith(".docx"):
         loader = Docx2txtLoader(temp_file_path)
     elif file.name.endswith(".txt"):
-        loader = TextLoader(temp_file_path)
+        # 👉 THE FIX IS HERE: Added autodetect_encoding=True
+        loader = TextLoader(temp_file_path, autodetect_encoding=True)
     
     docs = loader.load()
     os.remove(temp_file_path) # Clean up temp file
