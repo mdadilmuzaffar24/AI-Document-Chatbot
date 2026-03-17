@@ -65,19 +65,22 @@ with st.sidebar:
 
 # --- DOCUMENT PROCESSING FUNCTION ---
 def process_document(file):
-    # Create a temporary file to allow LangChain loaders to read it
+    # 1. BULLETPROOF TXT HANDLING (Bypasses the loader crash)
+    if file.name.endswith(".txt"):
+        # Forcibly decode the file and replace any corrupted characters
+        text_content = file.getvalue().decode("utf-8", errors="replace")
+        docs = [Document(page_content=text_content, metadata={"source": file.name})]
+        return docs
+
+    # 2. PDF & DOCX HANDLING
     with tempfile.NamedTemporaryFile(delete=False, suffix=f".{file.name.split('.')[-1]}") as temp_file:
         temp_file.write(file.getvalue())
         temp_file_path = temp_file.name
 
-    # Select the right loader based on file extension
     if file.name.endswith(".pdf"):
         loader = PyPDFLoader(temp_file_path)
     elif file.name.endswith(".docx"):
         loader = Docx2txtLoader(temp_file_path)
-    elif file.name.endswith(".txt"):
-        # 👉 THE FIX IS HERE: Added autodetect_encoding=True
-        loader = TextLoader(temp_file_path, autodetect_encoding=True)
     
     docs = loader.load()
     os.remove(temp_file_path) # Clean up temp file
