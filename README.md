@@ -3,7 +3,7 @@
 Hi! Welcome to my AI Document Chatbot project. This is a web application that lets you upload documents (PDF, Word, or Text files) and have a conversation with them. It uses AI to read the text, understand the context, and answer your specific questions based *only* on the document you uploaded.
 
 ## 🌟 Live Demo
-You can test the live application right here: **[[Insert your Streamlit App Link](https://ai-document-chatbot-project.streamlit.app/)]**
+You can test the live application right here: **[[Streamlit App Link](https://ai-document-chatbot-project.streamlit.app/)]**
 *(Note: The AI API key is already securely configured on the backend, so you can just upload a file and start chatting immediately!)*
 
 ## 🛠️ How It Works (The Architecture)
