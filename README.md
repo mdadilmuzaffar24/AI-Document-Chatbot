@@ -1,5 +1,8 @@
 # 📄 AI Document Chatbot
 
+<img width="1024" height="572" alt="image" src="https://github.com/user-attachments/assets/00ef1510-5148-476d-94b8-bcb646671c52" />
+
+
 ![Python](https://img.shields.io/badge/Python-3.11-blue.svg)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.34.0-FF4B4B.svg)
 ![LangChain](https://img.shields.io/badge/LangChain-Integration-green.svg)
